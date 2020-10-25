@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.demo.hubspottech"
+        minSdkVersion 24
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "BASE_URL", '"https://candidate.hubteam.com/"'
+            buildConfigField "String", "USER_KEY", '"bea0e1dea6f5695ed543cd3e3dec"'
+
+            debuggable true
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    android.sourceSets.all {
+        java.srcDir("src/$name/kotlin")
+    }
+}
+
+dependencies {
+    def appDependencies = rootProject.ext.appUiDependencies
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation appDependencies.kotlinStdLib
+    implementation appDependencies.ktxCore
+    implementation appDependencies.lifecycleExtensions
+    implementation appDependencies.viewmodelExtensions
+
+    // view
+    implementation appDependencies.appCompat
+    implementation appDependencies.constraintLayout
+    implementation appDependencies.materialDesign
+
+    // networking
+    implementation appDependencies.okHttp
+    implementation appDependencies.okHttpLogging
+    implementation appDependencies.retrofit
+    implementation appDependencies.retrofitGson
+    implementation appDependencies.gson
+    implementation appDependencies.retroftRx
+
+    // di
+    implementation appDependencies.dagger
+    implementation appDependencies.daggerSupport
+    kapt appDependencies.daggerCompiler
+    kapt appDependencies.daggerProcessor
+
+    // reactive
+    implementation appDependencies.rxJava
+    implementation appDependencies.rxAndroid
+
+    // logging
+    implementation appDependencies.timber
+
+}

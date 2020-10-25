@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">HubSpotTech</string>
+    <string name="click_to_retrieve_partners_data">Click to retrieve partners data</string>
+    <string name="click_to_send_booking_data">Click to send booking data</string>
+    <string name="get_partners">get partners</string>
+    <string name="send_booking_details">send booking details</string>
+    <string name="check_connection_message">Please check your connection</string>
+
+    <string name="not_found_error_message">Received Not found 404 error</string>
+    <string name="unauthorized_error_message">Received Authorised 401 error, please check your credentials</string>
+    <string name="resource_forbidden_error_message">Requested resource is forbidden for some reason</string>
+    <string name="bad_request_message">Request sent to the server but has invalid syntax</string>
+    <string name="bad_gateway_message">Bad response from that proxy server</string>
+    <string name="internal_error_message">Internal server error, please try again later</string>
+    <string name="resource_moved_error_message">Requested resource has been changed permanently</string>
+    <string name="partners_successfully_retrieved">Success: %1$s Partners retrieved</string>
+
+</resources>
