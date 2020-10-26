@@ -2,15 +2,15 @@ package com.demo.hubspottech.di.api
 
 import io.reactivex.Single
 import retrofit2.Response
+import retrofit2.http.Body
 
 class HubSpotService(private val hubSpotApi: HubSpotApi) {
 
-    fun getPartnersList(userkey: String): Single<Response<PartnersResponse>> = hubSpotApi.getPartners(userkey)
+    fun getPartnersList(userKey: String)
+            : Single<Response<PartnersResponse>> = hubSpotApi.getPartners(userKey)
 
-//    fun submit(
-//        authHeader: String,
-//        payLoad: HubSpotRequest): Single<Response<PartnersResponse>> =
-//        hubSpotApi.submit(
-//            authHeader = authHeader
-//        )
+    fun postDetails(
+        userKey: String,
+        @Body payLoad: String
+    ): Single<Response<SubmissionResponse>> = hubSpotApi.submit(userKey)
 }

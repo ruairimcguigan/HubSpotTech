@@ -1,6 +1,7 @@
 package com.demo.hubspottech.di.repository
 
 import com.demo.hubspottech.di.api.HubSpotService
+import com.demo.hubspottech.di.main.BookingProcessor
 import com.demo.hubspottech.di.rx.DefaultSchedulerProvider
 import com.demo.hubspottech.di.rx.RxDisposable
 import dagger.Module
@@ -20,14 +21,14 @@ class RepoModule {
         disposable: RxDisposable,
         defaultSchedulerProvider: DefaultSchedulerProvider,
         service: HubSpotService,
-        jsonProcessor: JsonProcessor
+        bookingProcessor: BookingProcessor
     ): Repository = DefaultRepository(
         service = service,
         disposable = disposable,
         schedulerProvider = defaultSchedulerProvider,
-        jsonProcessor = jsonProcessor
+        bookingProcessor = bookingProcessor
     )
 
     @Provides
-    fun provideJsonProcessor(): JsonProcessor = DefaultJsonProcessor()
+    fun provideBookingProcessor(): BookingProcessor = BookingProcessor()
 }

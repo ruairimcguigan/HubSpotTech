@@ -24,8 +24,7 @@ class MainActivity : DaggerAppCompatActivity() {
         setContentView(R.layout.activity_main)
         observeViewModel()
 
-        getPartnersButton.setOnClickListener { getPartners() }
-        postDetailsButton.setOnClickListener {  }
+        sendPartnerDetailsButton.setOnClickListener { getPartners() }
     }
 
     private fun observeViewModel() {
@@ -47,7 +46,7 @@ class MainActivity : DaggerAppCompatActivity() {
             Observer {
                 when (it) {
                     is Loading -> progressBar.visible()
-                    is Success -> preparePostDetailsFunction(it.data)
+                    is GetSuccess -> preparePostDetailsFunction(it.data)
                     is Error -> showError(it.error)
 
                     is HttpErrors.Forbidden -> showForbiddenNetworkError()
@@ -65,11 +64,9 @@ class MainActivity : DaggerAppCompatActivity() {
         progressBar.gone()
         toast(
             String.format(
-                getString(R.string.partners_successfully_retrieved),
-                data.partners.size
+                getString(R.string.partners_successfully_retrieved)
             )
         )
-        postDetailsButton.isEnabled = true
     }
 
     private fun showError(message: String) {

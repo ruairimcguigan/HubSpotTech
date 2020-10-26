@@ -2,7 +2,8 @@ package com.demo.hubspottech.di.api
 
 sealed class ApiResponse {
 
-    data class Success(val data: PartnersResponse) : ApiResponse()
+    data class GetSuccess(val data: PartnersResponse) : ApiResponse()
+    data class PostSuccess(val data: SubmissionResponse) : ApiResponse()
     object Loading : ApiResponse()
     data class Error(val error: String) : ApiResponse()
 

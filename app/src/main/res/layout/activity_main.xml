@@ -14,44 +14,25 @@
         android:layout_height="wrap_content"
         android:text="@string/click_to_retrieve_partners_data"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24" />
-
-    <TextView
-        android:id="@+id/sendBookingLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/click_to_send_booking_data"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="0.442" />
 
     <Button
-        android:id="@+id/getPartnersButton"
-        android:layout_width="@dimen/grid_0"
-        android:layout_height="wrap_content"
-        android:text="@string/get_partners"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
-
-    <Button
-        android:id="@+id/postDetailsButton"
+        android:id="@+id/sendPartnerDetailsButton"
         android:layout_width="@dimen/grid_0"
         android:layout_height="wrap_content"
         android:text="@string/send_booking_details"
-        android:enabled="false"
+        android:layout_marginStart="@dimen/grid_24"
+        android:layout_marginEnd="@dimen/grid_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.453" />
+        app:layout_constraintVertical_bias="0.518" />
 
     <ProgressBar
         android:id="@+id/progressBar"

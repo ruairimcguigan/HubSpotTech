@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">HubSpotTech</string>
-    <string name="click_to_retrieve_partners_data">Click to retrieve partners data</string>
+    <string name="click_to_retrieve_partners_data">Click to retrieve and send partners data</string>
     <string name="click_to_send_booking_data">Click to send booking data</string>
-    <string name="get_partners">get partners</string>
     <string name="send_booking_details">send booking details</string>
     <string name="check_connection_message">Please check your connection</string>
 
